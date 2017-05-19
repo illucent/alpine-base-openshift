@@ -33,10 +33,10 @@ RUN mkdir -p ${HOME} && \
     rm -rf /var/cache/apk/*
 
 # Copy executable utilities
-#COPY ./bin/ /usr/bin/
+COPY ./bin/ /usr/bin/
 
 # Directory with the sources is set as the working directory so all STI scripts
 # can execute relative to this path
 WORKDIR ${HOME}
 
-#CMD ["base-usage"]
+CMD ["base-usage"]
