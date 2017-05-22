@@ -30,6 +30,10 @@ RUN mkdir -p ${HOME} && \
         make automake gcc g++ binutils-gold linux-headers paxctl libgcc libstdc++ \
         python gnupg ncurses-libs ca-certificates && \
     update-ca-certificates --fresh && \
+    wget https://github.com/kelseyhightower/confd/releases/download/v0.12.0-alpha3/confd-0.12.0-alpha3-linux-amd64 -O /usr/local/bin/confd && \
+    chmod +x /usr/local/bin/confd && \
+    mkdir -p /etc/confd/conf.d /etc/confd/templates && \
+    mkdir -p /usr/libexec/s2i && \
     rm -rf /var/cache/apk/*
 
 # Copy executable utilities
